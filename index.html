@@ -9,11 +9,13 @@
 
 <body>
     <div id="app" >
+        <h1>{{title}}</h1>
         <!-- condizione per visualizzare la lista solo quando sono stati generati tutti e 10 gli indirizzi -->
-        <div v-if="emails.length === 10">
+        <div v-if="emails.length === this.nCall">
             <ul>
                 <!-- ciclo per avere 10 li in pagina -->
-                <li v-for="(_, i) in emails">{{ emails[i] }}</li>
+                <!-- <li v-for="(_, i) in emails">{{ emails[i] }}</li> -->
+                <li v-for="(element) in emails">{{ element }}</li>
             </ul>
         </div>
         <!-- in caso array non completo -->
